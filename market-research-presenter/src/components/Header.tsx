@@ -7,7 +7,7 @@ export default function Header() {
       <Toolbar>
         <QueryStatsIcon sx={{ mr: 2 }} />
         <Typography variant="h6" color="inherit" noWrap>
-          <Link color={"inherit"} underline={"none"} href="/" >Market Research</Link>
+          <Link color={"inherit"} underline={"none"} href="/market-research-presenter/" >Market Research</Link>
         </Typography>
       </Toolbar>
     </AppBar>
