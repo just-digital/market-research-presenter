@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import ReportSelector from "./components/ReportSelector";
+import Report, { loader as reportLoader } from "./components/Report";
+import Root from "./components/Root";
+import ErrorPage from "./ErrorPage";
+
+import { createHashRouter, RouterProvider } from "react-router-dom";
+
+const router = createHashRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <ErrorPage />,
+    children: [
+      { index: true, element: <ReportSelector /> },
+      {
+        path: "reports/:reportId",
+        element: <Report />,
+        loader: reportLoader,
+      },
+    ],
+  },
+]);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <RouterProvider router={router} />
+      <Footer />
+    </>
   );
 }
 
