@@ -15,11 +15,11 @@ function createData(reportId: string, generated: boolean) {
 }
 
 const rows = [
-  createData("2023-07-23", false),
   createData("2023-07-24", false),
   createData("2023-07-25", false),
   createData("2023-07-26", true),
   createData("2023-07-27", true),
+  createData("2023-07-28", true),
 ];
 
 export default function ReportSelector() {
