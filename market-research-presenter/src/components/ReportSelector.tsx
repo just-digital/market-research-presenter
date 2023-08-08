@@ -10,6 +10,34 @@ import {
 import CheckIcon from "@mui/icons-material/Check";
 import { Link } from "react-router-dom";
 
+import { LineChart } from "@mui/x-charts/LineChart";
+
+const sentiment = [0.2, -0.2, 0.5, 0.7, -0.8, 0.9, 1];
+const xLabels = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];
+const yLabels = [-1, -0.5, 0, 0.5, 1];
+
+export function DashedLineChart() {
+  return (
+    <LineChart
+      width={800}
+      height={300}
+      series={[{ data: sentiment, label: "Sentiment", id: "pvId" }]}
+      xAxis={[{ scaleType: "point", data: xLabels }]}
+      sx={{
+        ".MuiLineElement-root, .MuiMarkElement-root": {
+          strokeWidth: 1,
+        },
+        ".MuiLineElement-series-pvId": {
+          strokeDasharray: "5 5",
+        },
+        "& .MuiMarkElement-highlighted": {
+          stroke: "none",
+        },
+      }}
+    />
+  );
+}
+
 function createData(reportId: string, generated: boolean) {
   return { reportId, generated };
 }
@@ -22,6 +50,8 @@ const rows = [
   createData("2023-07-29", false),
   createData("2023-07-30", false),
   createData("2023-07-31", true),
+  createData("2023-08-01", true),
+  createData("2023-08-02", true),
 ];
 
 export default function ReportSelector() {
@@ -30,6 +60,7 @@ export default function ReportSelector() {
       <Typography variant="h6" color="inherit" noWrap>
         Report Selector
       </Typography>
+
       <TableContainer>
         <Table>
           <TableHead>
