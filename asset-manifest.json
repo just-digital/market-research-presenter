@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/market-research-presenter/static/css/main.90cfb2cc.css",
-    "main.js": "/market-research-presenter/static/js/main.d939a824.js",
+    "main.js": "/market-research-presenter/static/js/main.d7f60ad1.js",
     "static/js/787.7fd10719.chunk.js": "/market-research-presenter/static/js/787.7fd10719.chunk.js",
     "static/media/roboto-latin-300-normal.woff2": "/market-research-presenter/static/media/roboto-latin-300-normal.c48fb6765a9fcb00b330.woff2",
     "static/media/roboto-cyrillic-ext-300-normal.woff2": "/market-research-presenter/static/media/roboto-cyrillic-ext-300-normal.4777461b144e55145268.woff2",
@@ -19,11 +19,11 @@
     "static/media/roboto-greek-ext-300-normal.woff": "/market-research-presenter/static/media/roboto-greek-ext-300-normal.392a45a84c081c4b412d.woff",
     "index.html": "/market-research-presenter/index.html",
     "main.90cfb2cc.css.map": "/market-research-presenter/static/css/main.90cfb2cc.css.map",
-    "main.d939a824.js.map": "/market-research-presenter/static/js/main.d939a824.js.map",
+    "main.d7f60ad1.js.map": "/market-research-presenter/static/js/main.d7f60ad1.js.map",
     "787.7fd10719.chunk.js.map": "/market-research-presenter/static/js/787.7fd10719.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.90cfb2cc.css",
-    "static/js/main.d939a824.js"
+    "static/js/main.d7f60ad1.js"
   ]
 }
