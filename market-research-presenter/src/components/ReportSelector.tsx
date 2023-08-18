@@ -48,6 +48,7 @@ const rows = [
   createData("2023-08-15", true),
   createData("2023-08-16", true),
   createData("2023-08-17", true),
+  createData("2023-08-18", true),
 ];
 
 export default function ReportSelector() {
