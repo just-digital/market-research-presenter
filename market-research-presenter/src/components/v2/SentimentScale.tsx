@@ -4,7 +4,6 @@ import { Box, Popper, Paper, Typography } from "@mui/material";
 
 import { useTheme } from "@mui/material/styles";
 
-
 const Popup = ({ open, anchorEl, value }) => {
   return (
     <Popper
@@ -20,7 +19,7 @@ const Popup = ({ open, anchorEl, value }) => {
         sx={{ padding: "10px", transformOrigin: "center -50px" }}
       >
         <Typography sx={{ fontSize: "0.975rem" }}>
-          {value && value.toFixed(2)}
+          Sentiment value for article: {value && value.toFixed(2)}
         </Typography>
       </Paper>
     </Popper>

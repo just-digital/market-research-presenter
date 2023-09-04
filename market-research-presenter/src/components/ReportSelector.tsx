@@ -9,6 +9,9 @@ import {
 } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
 import { Link } from "react-router-dom";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
 
 import { LineChart } from "@mui/x-charts/LineChart";
 
@@ -42,16 +45,16 @@ function createData(reportId: string, generated: boolean) {
   return { reportId, generated };
 }
 
-const rows = [
-  createData("2023-08-01", true),
-  createData("2023-08-02", true),
-  createData("2023-08-15", true),
-  createData("2023-08-16", true),
-  createData("2023-08-17", true),
-  createData("2023-08-18", true),
-  createData("2023-08-21", true),
-  createData("2023-08-22", true),
-];
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
+const rows = Array.from({ length: 10 }, (_, i) => {
+  const date = dayjs()
+    .tz("America/Los_Angeles")
+    .subtract(i, "day")
+    .format("YYYY-MM-DD");
+  return createData(date, true);
+});
 
 export default function ReportSelector() {
   return (
