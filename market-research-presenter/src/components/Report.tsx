@@ -1,18 +1,16 @@
 import { useLoaderData } from "react-router-dom";
 import ReportV2 from "./v2/Report";
 
-const API_BASE = "http://127.0.0.1:8004";
-const API_KEY = "Xoong9eis5Uageiba6ie";
+import { apiFetch } from "../http";
 
 export async function loader({ params }: { params: any }) {
   // fetch the report from URL
+
   const reportId = params.reportId;
-  const report = await fetch(`${API_BASE}/reports/${reportId}`, {
-    headers: { access_token: API_KEY },
-  });
+  const report = await apiFetch(`/reports/${reportId}`);
   // If the status is not 200, throw an error
   if (report.status !== 200) {
-    throw new Error("Report not found");
+    throw new Error("Report not found - is your configured API URL correct?");
   }
   const reportData = await report.json();
   return reportData;
