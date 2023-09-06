@@ -67,7 +67,6 @@ const transformTags = (source: any, theme: any) => {
   return all_tags;
 };
 
-
 const SourceFull = ({ source }: { source: any }) => {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
@@ -116,7 +115,10 @@ const SourceFull = ({ source }: { source: any }) => {
             <TableCell style={{ paddingBottom: 0, paddingTop: 0 }}>
               <Collapse in={open} timeout="auto" unmountOnExit>
                 <SourceSummary summaries={source.analysis.summaries} />
-                <SourceButtons link={source.url} />
+                <Stack direction="row" spacing={1} marginTop={2}>
+                  <SourceButtons link={source.url} />
+                  <Typography fontSize={10} paddingTop={1} >Rank score: {source.rank_score}</Typography>
+                </Stack>
               </Collapse>
             </TableCell>
             <TableCell></TableCell>

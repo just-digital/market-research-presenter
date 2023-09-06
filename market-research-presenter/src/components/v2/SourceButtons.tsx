@@ -4,7 +4,6 @@ import DescriptionIcon from "@mui/icons-material/Description";
 const SourceButtons = ({ link }: { link: string }) => {
   return (
     <Box
-      marginTop={2}
       sx={{
         display: "flex",
         flexWrap: "wrap",
